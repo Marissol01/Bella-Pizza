@@ -1,10 +1,6 @@
 const Database = require('better-sqlite3');
 
-// Conecta ao banco
-const db = new Database('./restaurante.db');
+const db = new Database('./restaurante.db', { verbose: console.log }); 
 
-//Habilita verificação de chave estrangeira
-db.pragma('foreign_keys = ON');
-
-//Exposta
+db.pragma('foreign_keys = ON'); 
 module.exports = db;

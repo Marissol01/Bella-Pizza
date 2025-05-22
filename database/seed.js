@@ -8,9 +8,24 @@ const db = new Database(dbPath, { verbose: console.log }); // Ativa log de queri
 
 // Dados de exemplo
 const mesas = [
-  { id: 1, capacidade: 4, localidade: 'Área interna' },
-  { id: 2, capacidade: 6, localidade: 'Varanda' }, 
-  { id: 3, capacidade: 8, localidade: 'Área VIP' }
+  // Área interna
+  { id: 1, capacidade: 2, localidade: 'Área interna' },
+  { id: 2, capacidade: 4, localidade: 'Área interna' }, 
+  { id: 3, capacidade: 4, localidade: 'Área interna' },
+  { id: 4, capacidade: 4, localidade: 'Área interna' },
+  { id: 5, capacidade: 6, localidade: 'Área interna' },
+  { id: 6, capacidade: 6, localidade: 'Área interna' },
+
+  // Varanda
+  { id: 7, capacidade: 4, localidade: 'Varanda' },
+  { id: 8, capacidade: 4, localidade: 'Varanda' },
+  { id: 9, capacidade: 2, localidade: 'Varanda' },
+  { id: 10, capacidade: 2, localidade: 'Varanda' },
+
+  // Área VIP
+  { id: 11, capacidade: 8, localidade: 'Área VIP' },
+  { id: 12, capacidade: 6, localidade: 'Área VIP' },
+  { id: 13, capacidade: 2, localidade: 'Área VIP' },
 ];
 
 const usuarios = [
@@ -21,7 +36,22 @@ const usuarios = [
     senha_usuario: '123',
     email: 'joao@restaurante.com'
   },
-  // ... outros usuários
+  
+  {
+    nome: 'Mario Garçom',
+    tipo_funcionario: 'Garçom',
+    user_name: 'mario',
+    senha_usuario: '123',
+    email: 'mario@restaurante.com'
+  },
+
+  {
+    nome: 'Maria Gerente',
+    tipo_funcionario: 'Gerente',
+    user_name: 'maria',
+    senha_usuario: '123',
+    email: 'maria@restaurante.com'
+  }
 ];
 
 try {

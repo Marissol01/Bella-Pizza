@@ -1,6 +1,26 @@
-"node_modules/" 
-".DS_Store" 
-".env" 
-"npm-debug.log" 
-"dist/" 
-"coverage/" 
+# Ignora dependências instaladas pelo npm
+node_modules/
+
+# Ignora arquivos temporários do sistema 
+.DS_Store
+
+# Ignora arquivos de variáveis de ambiente
+.env
+
+# Ignora logs de erro do npm
+npm-debug.log*
+
+# Ignora pasta de build 
+dist/
+
+# Ignora pasta de cobertura de testes 
+coverage/
+
+# Ignora arquivos SQLite ou de banco de dados local 
+*.sqlite
+*.sqlite3
+*.db
+
+# Ignora arquivos de cache do editor 
+.vscode/
+*.log

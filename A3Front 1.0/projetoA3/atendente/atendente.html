@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Painel do atendente</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../AssetsAtendente/styleAtendente.css">
+    <link rel="icon" href="../AssetsAtendente/image//favicon.png" type="image/png">
+
+</head>
+
+<body>
+
+    <main class="content">
+        <div class="painel">
+
+            <div class="sair-menu">
+                <button class="button-exit" id="exit">
+                        <span class="button-description">Sair</span>
+                        <img class="exit" src="../AssetsAtendente/image/sair.png"
+                        alt="porta aberta indicando saida">
+                </button>
+            </div>
+
+            <div class="logo-container">
+                <img src="../AssetsAtendente/image/favicon.png" alt="ícone de pizza minimalista nas cores verde oliva e vermelho"
+                    class="logo-img" />
+                <p class="logo-text"><span class="red-name">Bella</span> Pizza</p>
+            </div>
+
+            <h1>Bem Vindo, (usuário_atendente)!</h1>
+            <h2>Painel de Reservas</h2>
+
+            <div class="botoes">
+                <button class="botao" id="cadastro">Cadastrar Reserva</button>
+                <button class="botao" id="editar">Editar Reserva</button>
+                <button class="botao" id="visualizar">Visualizar Reservas</button>
+                <button class="botao" id="cancelar">Cancelar Reserva</button>
+            </div>
+        </div>
+
+    </main>
+
+    <script>
+        document.getElementById('cadastro').addEventListener('click', function () {
+            window.location.href = 'cadastramento.html';
+        });
+
+        document.getElementById('editar').addEventListener('click', function () {
+            window.location.href = 'edicao.html';
+        });
+
+        document.getElementById('visualizar').addEventListener('click', function () {
+            window.location.href = 'visualizar.html';
+        });
+
+        document.getElementById('cancelar').addEventListener('click', function () {
+            window.location.href = 'cancelar.html';
+        });
+
+        document.getElementById('exit').addEventListener('click', function () {
+            window.location.href = '../login.html';
+        });
+    </script>
+
+</body>
+
+</html>

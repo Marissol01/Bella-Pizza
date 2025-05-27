@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Atualizar status da mesa</title>
+
+    <link rel="stylesheet" href="../AssetsGerente/styleStatus.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;600&display=swap" rel="stylesheet">
+    <link rel="icon" href="../AssetsAtendente/image/favicon.png" type="image/png">
+</head>
+
+<body>
+
+
+    <main class="container">
+
+        <div class="filtro">
+
+            <div class="voltar-menu">
+                <button class="button-back" id="button-back">
+                    <img class="back" src="../AssetsAtendente/image/back-button-white.png"
+                        alt="seta para esquerda na cor branca indicando volta"><span
+                        class="button-description">Voltar</span>
+                </button>
+            </div>
+
+            <div class="cabecalho">
+                <div class="logo-area">
+                    <div>
+                        <img src="../AssetsAtendente/image/Untitled-design.png"
+                            alt="ícone de pizza minimalista nas cores verde oliva e vermelho" class="pizza-img">
+                    </div>
+                    <h1><span class="bella">Bella</span> <span class="pizza">Pizza</span></h1>
+                </div>
+
+                <h1 class="main-name">Atualizar Status da Mesa</h1>
+                <h2>Informe o número da mesa e data</h2>
+
+                <div class="input-container">
+                    <input type="text" placeholder="Número Mesa" class="campo" aria-label="Número da mesa">
+                    <input type="text" placeholder="DD/MM/AAAA" class="campo" aria-label="Data da reserva">
+                    <button class="botao-pesquisa"></button>
+                </div>
+            </div>
+
+            <div class="tabela-reservas">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Mesa</th>
+                            <th>Nome</th>
+                            <th>Data</th>
+                            <th>Contato</th>
+                            <th>Tempo</th>
+                            <th>Qtd Pessoas</th>
+                            <th>Horário</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>12</td>
+                            <td>Roberta Silva</td>
+                            <td>12/06</td>
+                            <td>4002-8922</td>
+                            <td>3h</td>
+                            <td>6</td>
+                            <td>13h</td>
+                            <td><button class="confirmacao-pendente"></button></td>
+                        </tr>
+                        <tr>
+                            <td>12</td>
+                            <td>Roberto Lobato</td>
+                            <td>12/06</td>
+                            <td>roberto@gmail.com</td>
+                            <td>2h</td>
+                            <td>5</td>
+                            <td>17h</td>
+                            <td><button class="confirmacao-pendente"></button></td>
+                        </tr>
+                        <tr>
+                            <td>12</td>
+                            <td>Ribeiro Monteiro</td>
+                            <td>12/06</td>
+                            <td>8922-4002</td>
+                            <td>4h</td>
+                            <td>6</td>
+                            <td>19h</td>
+                            <td><button class="confirmacao-pendente"></button></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+        </div>
+
+
+    </main>
+
+    <div id="modal-editar" class="modal">
+        <div class="modal-conteudo">
+            <h1>Selecione o status que deseja alterar: </h1>
+
+            <div class="status-container">
+                <button type="submit" class="confirmacao-pendente-icon"></button>
+                <button type="submit" class="confirmacao-icon"></button>
+                <button type="submit" class="cancelado"></button>
+                <button type="submit" class="finalizado"></button>
+            </div>
+            <div class="description-container">
+                <p><span class="fonte-amarela">Pendente</span></p>
+                <p><span class="fonte-verde">Confirmado</span></p>
+                <p><span class="fonte-vermelha">Cancelado</span></p>
+                <p><span class="fonte-preta">Finalizado</span></p>
+            </div>
+
+            <div class="modal-botoes">
+                <button class="voltar" id="fechar-modal">Voltar</button>
+                <button class="confirmar">Confirmar</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const botoesEditar = document.querySelectorAll('.confirmacao-pendente');
+        const modal = document.getElementById('modal-editar');
+        const fechar = document.getElementById('fechar-modal');
+
+        botoesEditar.forEach(botao => {
+            botao.addEventListener('click', () => {
+                modal.style.display = 'flex';
+            });
+        });
+
+        fechar.addEventListener('click', () => {
+            modal.style.display = 'none';
+        });
+
+
+        window.addEventListener('click', function (e) {
+            if (e.target == modal) {
+                modal.style.display = 'none';
+            }
+        });
+
+
+
+        document.getElementById('button-back').addEventListener('click', function () {
+            window.location.href = 'gerente.html';
+        });
+    </script>
+
+</body>
+
+</html>

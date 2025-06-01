@@ -4,6 +4,7 @@ node_modules/
 # Ignora arquivos temporários do sistema 
 .DS_Store
 
+#Ignora o arquivo package-lock.json
 package-lock.json
 
 # Ignora arquivos de variáveis de ambiente

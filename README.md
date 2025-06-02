@@ -1,2 +1,21 @@
-# Bella-Pizza
-Projeto A3 de Sistemas Distribuídos 
+🍕 Bella Pizza 🍕
+
+➢ Descrição
+
+O Bella Pizza é um sistema para gerenciamento de reservas em um restaurante. Ele foi desenvolvido em Node.js com arquitetura MVC, usando Express para o back-end, better-sqlite3 como banco de dados e um front-end em HTML, CSS e JavaScript.,
+
+➢ Estrutura de Pastas
+
+➢ Requisitos
+
+Node.js (É necessário utilizar as versões mais atuais do Node, para o Sistema Rodar a API Fetch devidamente.),
+Express e Cors,
+better-sqlite3,
+
+➢ Instalação 
+ 
+➢ Como Executar o Projeto
+
+➢ Tecnologias Utilizadas
+
+➢ Recursos Implementados

@@ -31,7 +31,7 @@ CREATE TABLE IF NOT EXISTS reservas (
     hora_reserva TEXT NOT NULL,
     id_mesa INTEGER NOT NULL,
     qtd_pessoas INTEGER NOT NULL CHECK (qtd_pessoas > 0),
-    id_usuario INTEGER NOT NULL,
+    id_usuario INTEGER NULL,
     contato TEXT NOT NULL,
     status TEXT DEFAULT 'pendente' CHECK (status IN ('pendente', 'confirmada', 'cancelada', 'finalizada')),
     nome_cliente TEXT NOT NULL,
@@ -43,4 +43,5 @@ CREATE TABLE IF NOT EXISTS reservas (
 `);
 
 console.log('Tabelas criadas com sucesso!');
-db.close();
+
+module.exports = db;

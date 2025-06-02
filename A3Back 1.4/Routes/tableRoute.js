@@ -33,7 +33,7 @@ router.get('/disponiveis', (req, res) => {
     }
 });
 
-// Atualizar status de disponibilidade de uma mesa
+// Atualizar status de disponibilidade de uma mesa(Função de Ocupação)
 router.put('/:id/disponibilidade', (req, res) => {
     const { id } = req.params;
     const { disponibilidade } = req.body;

@@ -1,4 +1,10 @@
-🍕 Bella Pizza 🍕
+<div align="center">
+  <h1> Bella Pizza 🍕</h1>
+
+  <img src="https://i.imgur.com/5p6MYS5.png" alt="ícone pizza" width="150" height="150">
+</div>
+
+
 
 ➢ Descrição
 

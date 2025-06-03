@@ -25,3 +25,10 @@ better-sqlite3,
 ➢ Tecnologias Utilizadas
 
 ➢ Recursos Implementados
+
+## 🧪 Credenciais de Teste
+| Tipo de Funcionário | Nome de Usuário | Senha | 
+|---------------------|------------------|--------|
+| Atendente           | `joao`           | `123`  |
+| Garçom              | `mario`          | `123`  |
+| Gerente             | `maria`          | `123`  |

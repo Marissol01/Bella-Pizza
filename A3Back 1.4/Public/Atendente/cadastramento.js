@@ -1,6 +1,9 @@
+//Lógica = ok!, BackEnd = ok!
+
 document.addEventListener('DOMContentLoaded', () => {
   const form = document.getElementById('form-reserva');
-  
+
+  //REVISAR, ADICIONAR HORÁRIO DE RESERVA?  
   form.addEventListener('submit', async function (e) {
     e.preventDefault();
 
@@ -11,8 +14,9 @@ document.addEventListener('DOMContentLoaded', () => {
       nome: formElement.nome.value,
       data: formElement.data.value,
       contato: formElement.contato.value,
-      tempo: formElement.tempo.value,
-      quantidade: formElement.quantidade.value
+      tempo: formElement.tempo.value, // ex: "120"
+      quantidade: formElement.quantidade.value,
+      horario: formElement.horario.value // novo input ex: "19:00"
     };
 
     try {
@@ -46,4 +50,22 @@ document.addEventListener('DOMContentLoaded', () => {
       alert('Erro inesperado. Verifique o console.');
     }
   });
+});
+//AO RECARREGAR A PÁGINA, O SELECT ATUALIZA E MOSTRA NOVOS id_mesa DO BANCO DE DADOS✅
+document.addEventListener('DOMContentLoaded', () => {
+  const selectMesa = document.getElementById('mesa-select');
+
+  fetch('/mesas/ids')
+    .then(response => response.json())
+    .then(mesas => {
+      mesas.forEach(mesa => {
+        const option = document.createElement('option');
+        option.value = mesa.id; // ou mesa.id_mesa
+        option.textContent = `Mesa ${mesa.id} (capacidade: ${mesa.capacidade})`;
+        selectMesa.appendChild(option);
+      });
+    })
+    .catch(error => {
+      console.error('Erro ao carregar mesas disponíveis:', error);
+    });
 });

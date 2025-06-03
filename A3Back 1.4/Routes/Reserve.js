@@ -6,6 +6,7 @@ const db = require('../Models/init-db');
 const { confirmarReserva } = require('../Controllers/occupationController');
 const { cadastrarReserva } = require('../Controllers/cadastroController');
 const { cadastrarMesa } = require('../Controllers/adminTable');
+const { listarReservas, buscarPorMesaEData } = require('../Controllers/viewController');
 
 //Criar a rota GET para listar reservas
 router.get('/', (req, res) => {
@@ -62,6 +63,8 @@ router.patch('/:id/confirmar', confirmarReserva);//Redireciona para o Controller
 
 router.post('/mesas', cadastrarMesa); //cadastrar mesa
 router.post('/cadastrar', cadastrarReserva); //Redireciona para o Controller de Cadastro de Reserva
+router.get('/visualizar', listarReservas); // Pega os dados das reservas cadastradas, e cria uma nova linha na interface "visualizar reservas"
+router.get('/filtro', buscarPorMesaEData);
 
 module.exports = router;
 

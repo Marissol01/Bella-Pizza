@@ -1,3 +1,4 @@
+//RESPONSÁVEL POR CONFIRMAR OCUPAÇÃO DA RESERVA
 //LÓGICA = OK ; API BACKEND = Revisar
 
 const botoesEditar = document.querySelectorAll('.confirmacao-pendente');

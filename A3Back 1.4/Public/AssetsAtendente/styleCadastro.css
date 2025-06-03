@@ -175,6 +175,16 @@ h1 {
     transition: 0.2s ease;
 }
 
+/* Estilização do Select Mesas*/
+
+#mesa-select {
+  height: 36px; /* ou o valor que quiser */
+  font-size: 16px; /* opcional, para deixar o texto proporcional */
+  border-radius: 7px;
+  opacity: 0.7;
+}
+/* LEMBRAR DE CENTRALIZAR O INPUT HORA DE RESERVA*/
+
 @media (max-width: 820px) {
     .formulario {
         grid-template-columns: 1fr;

@@ -3,11 +3,10 @@
  const express = require('express');
 const router = express.Router();
 const path = require('path');
-const Database = require('better-sqlite3');
 
-const dbPath = path.join(__dirname, '../Models/restaurante.db');
 const { cadastrarMesa } = require('../Controllers/adminTable'); 
-const db = new Database(dbPath);
+const { listarMesas } = require('../Controllers/adminTable'); 
+const db = require('../Models/init-db');
 
 
 
@@ -33,7 +32,7 @@ router.get('/disponiveis', (req, res) => {
     }
 });
 
-// Atualizar status de disponibilidade de uma mesa(Função de Ocupação)
+// Atualizar status de disponibilidade de uma mesa
 router.put('/:id/disponibilidade', (req, res) => {
     const { id } = req.params;
     const { disponibilidade } = req.body;
@@ -58,5 +57,8 @@ router.put('/:id/disponibilidade', (req, res) => {
 
 // Criar nova mesa
 router.post('/', cadastrarMesa);
+
+//Cria uma nova option dentro do Select , em cadastramento.js
+router.get('/ids', listarMesas);
 
 module.exports = router;

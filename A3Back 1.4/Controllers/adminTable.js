@@ -27,4 +27,19 @@ function cadastrarMesa(req, res) {
   }
 }
 
-module.exports = { cadastrarMesa };
+// Lógica para listar mesas no Select do Front ✅
+function listarMesas(req, res) {
+  try {
+    const stmt = db.prepare('SELECT id_mesa AS id, capacidade FROM mesas WHERE disponibilidade = 1');
+    const mesas = stmt.all();
+    res.json(mesas);
+  } catch (error) {
+    console.error('Erro ao listar mesas disponíveis:', error);
+    res.status(500).json({ erro: 'Erro ao buscar mesas disponíveis ' });
+  }
+}
+
+module.exports = {
+  cadastrarMesa,
+  listarMesas
+};

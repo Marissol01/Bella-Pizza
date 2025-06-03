@@ -1,5 +1,5 @@
+//RESPONSÁVEL POR ATUALIZAR STATUS DE RESERVA
 //LÓGICA = OK , API BACKEND = Revisar 
-
 
 const botoesEditar = document.querySelectorAll('.confirmacao-pendente, .confirmacao, .cancelado, .finalizado');
 

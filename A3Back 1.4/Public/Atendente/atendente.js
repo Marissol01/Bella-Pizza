@@ -1,3 +1,5 @@
+//Lógica = ok!
+
 const botoes = {
   cadastro: 'cadastramento.html',
   editar: 'edicao.html',

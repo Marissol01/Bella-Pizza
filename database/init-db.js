@@ -36,7 +36,7 @@ CREATE TABLE IF NOT EXISTS reservas (
     status TEXT DEFAULT 'pendente' CHECK (status IN ('pendente', 'confirmada', 'cancelada', 'finalizada')),
     nome_cliente TEXT NOT NULL,
     datahora_criacao TEXT DEFAULT CURRENT_TIMESTAMP,
-    duracao_reserva INTEGER DEFAULT 120,
+    duracao_reserva INTEGER NOT NULL DEFAULT 120, --NOT NULL AGORA!!
     FOREIGN KEY (id_mesa) REFERENCES mesas(id_mesa),
     FOREIGN KEY (id_usuario) REFERENCES usuarios(id_usuario)
 );

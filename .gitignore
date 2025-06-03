@@ -1,0 +1,29 @@
+# Ignora dependências instaladas pelo npm
+node_modules/
+
+# Ignora arquivos temporários do sistema 
+.DS_Store
+
+#Ignora o arquivo package-lock.json
+package-lock.json
+
+# Ignora arquivos de variáveis de ambiente
+.env
+
+# Ignora logs de erro do npm
+npm-debug.log*
+
+# Ignora pasta de build 
+dist/
+
+# Ignora pasta de cobertura de testes 
+coverage/
+
+# Ignora arquivos SQLite ou de banco de dados local 
+*.sqlite
+*.sqlite3
+
+
+# Ignora arquivos de cache do editor 
+.vscode/
+*.log

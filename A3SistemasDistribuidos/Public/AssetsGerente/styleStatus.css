@@ -515,7 +515,7 @@ input:focus {
     background-size: 60%;
     background-repeat: no-repeat;
     background-position: center;
-    cursor: pointer;
+    cursor: not-allowed;
     transition: 0.2s ease;
 }
 

@@ -106,55 +106,57 @@ Node.js 18 ou superior (Versões mais antigas podem causar incompatibilidades), 
 
 <h2>➢ Instalação </h2>
 
-1. Obtenha o código fonte (ou baixe manualmente o ZIP e extraia)
+<b> 1. Obtenha o código fonte (ou baixe manualmente o ZIP e extraia) </b>
 ```
-text git clone (https://github.com/Marissol01/Bella-Pizza)
+git clone (https://github.com/Marissol01/Bella-Pizza)
 cd Bella-Pizza
 ```
 
-2. Confirme se a sua versão do Node instalada é 18 ou superior:
+<b> 2. Confirme se a sua versão do Node instalada é 18 ou superior: </b>
 ```
 node -v 
 ```
 ▸ Deve retornar v18.x ou superior <br>
 ▸ Sua versão é inferior? Atualize em nodejs.org
 
-3. Instale o node:
+<b> 3. Instale o node: </b>
 ```
 npm install
 ```
 ▸ Uma pasta node_modules será criada no seu projeto
 
-4. Instale as dependências necessárias:
+<b> 4. Instale as dependências necessárias: </b>
 ```
 npm install express cors better-sqlite3
 ```
 
 <h2>➢  Como executar o projeto</h2>
 
-1. Agora, você executa o arquivo server.js para iniciar o servidor
+<b> 1. Para iniciar o servidor, você executa o arquivo server.js através do comando: </b>
 ```
 node --watch server.js
 ```
 ▸ Em resposta deve surgir esta mensagem no terminal:
 ``` " Tabelas criadas com sucesso! http://localhost:3000 " ```
 
-2. Agora, popule o banco de dados com dados iniciais:
+<b> 2. Agora, popule o banco de dados com dados iniciais: </b>
+```
 node A3SistemasDistribuidos/models/seed.js
+ ```
 
 ▸ Em resposta deve surgir a mensagem:
 ``` "Todos os dados foram inseridos!" ```
 
-3. Por fim, para utilizar a aplicação deve se pegar a url "http://localhost:3000" e por no seu navegador
+<b> 3. Por fim, para utilizar a aplicação deve se pegar a url ``` "http://localhost:3000" ``` e por no seu navegador </b>
 
 <h3> Sua pizzaria digital está pronta para rodar! :D </h3> 
 
 Problemas comuns:
 
-▸ Erro "Cannot find module"?
+▸ Erro "Cannot find module"? <br>
 Verifique se está na pasta correta (Bella-Pizza)
 
-▸ Banco de dados não carrega? Verifique:
+▸ Banco de dados não carrega? Verifique: <br>
 Se o arquivo seed.js está no caminho correto: A3SistemasDistribuidos/models/
 Se better-sqlite3 instalou corretamente
 

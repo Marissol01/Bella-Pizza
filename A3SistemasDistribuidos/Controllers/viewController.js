@@ -60,7 +60,47 @@ function buscarPorMesaEData(req, res) {
   }
 }
 
+// Função responsável por buscar reservas com base em um status específico (ex: 'confirmada', 'cancelada', 'pendente').
+//ESTA FUNÇÃO AINDA NÃO ESTÁ SENDO IMPLEMENTADA NO FRONT
+function buscarReservasPorStatus(req, res) {
+  try {
+    // Extrai o parâmetro 'status' da rota (ex: /reservas/status/confirmada → status = 'confirmada')
+    const status = req.params.status;
+
+    // Prepara a instrução SQL para buscar todas as reservas com o status informado,
+    // unindo com a tabela de mesas para garantir que a mesa está disponível (disponibilidade = 1).
+    const stmt = db.prepare(`
+      SELECT 
+        r.id_reserva,
+        r.id_mesa,
+        r.nome_cliente,
+        r.data_reserva,
+        r.hora_reserva,
+        r.duracao_reserva,
+        r.qtd_pessoas,
+        r.contato,
+        r.status
+      FROM reservas r
+      JOIN mesas m ON r.id_mesa = m.id_mesa
+      WHERE r.status = ? AND m.disponibilidade = 1
+      ORDER BY r.data_reserva, r.hora_reserva
+    `);
+
+    // Executa a consulta usando o valor do status como parâmetro
+    const reservas = stmt.all(status);
+
+    // Retorna as reservas encontradas em formato JSON com status 200 (OK)
+    res.status(200).json(reservas);
+
+  } catch (err) {
+    // Caso ocorra algum erro durante a execução da consulta, exibe o erro no console
+    // e retorna uma resposta com status 500 (erro interno)
+    console.error('Erro ao buscar reservas:', err);
+    res.status(500).json({ error: 'Erro interno ao buscar reservas.' });
+  }
+}
 module.exports = {
   listarReservas,
-  buscarPorMesaEData
+  buscarPorMesaEData,
+  buscarReservasPorStatus
 };

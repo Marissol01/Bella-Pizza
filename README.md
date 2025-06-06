@@ -155,9 +155,10 @@ Se better-sqlite3 instalou corretamente
 
 <h2> ➢ Recursos Implementados </h2>
 
-<h2> ➢ Credenciais de Teste </h2>
-| Tipo de Funcionário | Nome de Usuário | Senha | 
-|---------------------|------------------|--------|
-| Atendente           | `joao`           | `123`  |
-| Garçom              | `mario`          | `123`  |
-| Gerente             | `maria`          | `123`  |
+## ➢ Credenciais de Teste
+
+| Tipo de Funcionário | Nome de Usuário | Senha |
+|---------------------|-----------------|-------|
+| Atendente           | `joao`          | `123` |
+| Garçom              | `mario`         | `123` |
+| Gerente             | `maria`         | `123` |

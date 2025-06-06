@@ -5,8 +5,6 @@ const router = express.Router();
 const path = require('path');
 const Database = require('better-sqlite3');
 
-const dbPath = path.join(__dirname, '../Models/restaurante.db');
-const db = new Database(dbPath);
 
 // Informações gerais do dashboard (visão resumida)
 router.get('/resumo', (req, res) => {

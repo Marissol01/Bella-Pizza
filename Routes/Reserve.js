@@ -8,6 +8,7 @@ const { cadastrarReserva } = require('../Controllers/cadastroController');
 const { cadastrarMesa } = require('../Controllers/adminTable');
 const { listarReservas, buscarPorMesaEData, buscarReservasPorStatus } = require('../Controllers/viewController');
 
+
 //Criar a rota GET para listar reservas
 router.get('/', (req, res) => {
   db.all('SELECT * FROM reservas', [], (err, rows) => {
@@ -31,31 +32,6 @@ router.get('/esp', (req, res) => {
   res.json(reservas);
 });
 
-router.post('/confirmar', (req, res) => { //Revisar esta rota ( Está faltando 1 dado)
-  const {
-    data_reserva,
-    hora_reserva,
-    id_mesa,
-    qtd_pessoas,
-    contato,
-    nome_cliente
-  } = req.body;
-
-  const stmt = db.prepare(`
-    INSERT INTO reservas (
-      data_reserva, hora_reserva, id_mesa, qtd_pessoas,
-       contato, nome_cliente
-    ) VALUES (?, ?, ?, ?, ?, ?)
-  `);
-
-  try {
-    const info = stmt.run(data_reserva, hora_reserva, id_mesa, qtd_pessoas, id_usuario, contato, nome_cliente);
-    res.status(201).json({ id: info.lastInsertRowid, status: 'Reserva criada' });
-  } catch (e) {
-    res.status(500).json({ erro: e.message });
-  }
-});
-
 //router.post('/confirmar/:id', confirmarReserva);
 
 router.patch('/:id/confirmar', confirmarReserva);//Redireciona para o Controller de Ocupação de Reserva
@@ -66,6 +42,7 @@ router.post('/cadastrar', cadastrarReserva); //Redireciona para o Controller de 
 router.get('/visualizar', listarReservas); // Pega os dados das reservas cadastradas, e cria uma nova linha na interface "visualizar reservas"
 router.get('/status/:status', buscarReservasPorStatus);// Rota dinâmica que busca reservas de acordo com o status ('confirmada', 'cancelada', 'pendente') passado na URL
 router.get('/filtro', buscarPorMesaEData);// Busca reservas com base na mesa e data (útil para evitar conflitos de agendamento)
+
 
 module.exports = router;
 

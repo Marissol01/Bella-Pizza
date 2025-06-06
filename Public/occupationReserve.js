@@ -56,19 +56,41 @@ function ativarConfirmacao() {
   });
 
   // Quando o botão "Confirmar" no modal for clicado:
-  confirmar.addEventListener('click', () => {
-    if (!idReservaSelecionada) return; // Se nenhuma reserva foi selecionada, sai
+  confirmar.addEventListener('click', async () => {
+    if (!idReservaSelecionada) return;
 
-    // Troca as classes do botão para indicar que a reserva foi confirmada
-    botaoAtual.classList.remove('confirmacao-pendente');
-    botaoAtual.classList.add('confirmacao');
+    try {
+      // Envia uma requisição PUT para a API para confirmar a reserva
+      const response = await fetch(`http://localhost:3000/reservas/${idReservaSelecionada}/confirmar`, {
+        method: 'PATCH', // ou POST, dependendo da sua API
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          status: 'confirmada' // ou outro campo conforme sua API
+        }),
+      });
 
-    // Fecha o modal e limpa os dados temporários
-    modal.style.display = 'none';
-    idReservaSelecionada = null;
-    botaoAtual = null;
+      if (!response.ok) {
+        throw new Error(`Erro ao confirmar reserva. Status: ${response.status}`);
+      }
+
+      botaoAtual.classList.remove('confirmacao-pendente');
+      botaoAtual.classList.add('confirmacao');
+      botaoAtual.textContent = 'Confirmado';
+
+      // Fecha o modal e limpa os dados temporários
+      modal.style.display = 'none';
+      idReservaSelecionada = null;
+      botaoAtual = null;
+
+    } catch (error) {
+      console.error('Erro ao confirmar reserva:', error);
+      alert('Erro ao confirmar reserva. Tente novamente.');
+    }
   });
 }
+
 
 // Quando o DOM estiver completamente carregado, chama a função principal
 document.addEventListener('DOMContentLoaded', carregarEAtivarEventos);

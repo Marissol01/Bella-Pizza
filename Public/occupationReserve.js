@@ -1,5 +1,5 @@
 //RESPONSÁVEL POR CONFIRMAR OCUPAÇÃO DA RESERVA
-//LÓGICA = OK ; API BACKEND = Revisar
+//LÓGICA = OK ; API BACKEND = OK!
 
 // Ela carrega as reservas com status 'pendente' e ativa os eventos nos botões
 async function carregarEAtivarEventos() {

@@ -62,7 +62,7 @@ function buscarPorMesaEData(req, res) {
 
 // Função responsável por buscar reservas com base em um status específico (ex: 'confirmada', 'cancelada', 'pendente').
 //ESTA FUNÇÃO AINDA NÃO ESTÁ SENDO IMPLEMENTADA NO FRONT
-function buscarReservasPorStatus(req, res) {
+function visualizarReservasPorStatus(req, res) {
   try {
     // Extrai o parâmetro 'status' da rota (ex: /reservas/status/confirmada → status = 'confirmada')
     const status = req.params.status;
@@ -82,7 +82,7 @@ function buscarReservasPorStatus(req, res) {
         r.status
       FROM reservas r
       JOIN mesas m ON r.id_mesa = m.id_mesa
-      WHERE r.status = ? AND m.disponibilidade = 1
+      WHERE r.status = ? 
       ORDER BY r.data_reserva, r.hora_reserva
     `);
 
@@ -102,5 +102,5 @@ function buscarReservasPorStatus(req, res) {
 module.exports = {
   listarReservas,
   buscarPorMesaEData,
-  buscarReservasPorStatus
+  visualizarReservasPorStatus
 };

@@ -13,88 +13,88 @@ O Bella Pizza é um sistema para gerenciamento de reservas em um restaurante. El
 
 ```text
 bella_pizza/
-│   │
-│   └── A3SistemasDistribuidos/
-│       ├── Controllers/ (Lógica de negócio e controle)                
-│       │   ├── adminTable.js         
-│       │   ├── cadastroController.js 
-│       │   ├── loginController.js
-│       │   ├── occupationController.js           
-│       │   └── viewController.js
-│       │      
-│       ├── Models/ (Interação com o banco de dados)              
-│       │   ├── check-db.js
-│       │   ├── db.js
-│       │   ├── init-db.js
-│       │   ├── restaurante.db 
-│       │   ├── seed.js
-│       │   ├── testes-db.js      
-│       │   └── usuarios.js
-│       │
-│       ├── Public/ (Front-end (HTML, CSS, JS, assets))
-│       │   ├── AssetsAtendente/                 
-│       │   │   ├── image/
-│       │   │   │   └──(arquivos de imagem)
-│       │   │   ├── styleAtendente.css
-│       │   │   ├── styleCadastro.css
-│       │   │   ├── styleCancelamento.css
-│       │   │   ├── styleEdicao.css             
-│       │   │   └── styleVisualizar.css
-│       │   │     
-│       │   ├── AssetsGarçom/                 
-│       │   │   ├── styleGarcom.css                       
-│       │   │   └── styleOcupacaoGarcom.css
-│       │   │
-│       │   ├── AssetsGerente/                 
-│       │   │   ├── images/
-│       │   │   │   └──(arquivos de imagem)
-│       │   │   ├── styleConfirmacao.css
-│       │   │   ├── styleEstatistica.css
-│       │   │   ├── styleOcupacao.css
-│       │   │   └── styleStatus.css             
-│       │   │
-│       │   ├── Atendente/                 
-│       │   │   ├── atendente.html         
-│       │   │   ├── atendente.js 
-│       │   │   ├── cadastramento.html        
-│       │   │   ├── cadastramento.js
-│       │   │   ├── cancelar.html         
-│       │   │   ├── cancelar.js
-│       │   │   ├── edicao.html    
-│       │   │   ├── edicao.js                
-│       │   │   └── visualizar.html
-│       │   │
-│       │   ├── Garçom/                 
-│       │   │   ├── atualizarGarcom.html          
-│       │   │   ├── garcom.html
-│       │   │   ├── ocupacaoGarcom.html
-│       │   │   └── visualizarGarcom.html
-│       │   │
-│       │   ├── Gerente/                 
-│       │   │   ├── atualizar_status.html          
-│       │   │   ├── estatistica.html
-│       │   │   ├── gerente.html         
-│       │   │   ├── ocupacao.html     
-│       │   │   └── visualizar_reserva_confirmada.html
-│       │   │
-│       │   ├── login.html 
-│       │   ├── login.js
-│       │   ├── occupationReserve.js
-│       │   ├── searcgReserve.js
-│       │   ├── styleLogin.css
-│       │   ├── updateStatusRserve.js      
-│       │   └── viewReserves.js
-│       │          
-│       ├── Routes/ (Definição de endpoints da API)              
-│       │   ├── dashboardRoute.js 
-│       │   ├── index.js
-│       │   ├── loginRoute.js
-│       │   ├── Reserve.js      
-│       │   └── tableRoute.js
-│       │
-│       ├── package.json
-│       ├── Relatório sobre o Progresso.txt
-│       └── server.js
+│
+├── Controllers/ (Lógica de negócio e controle)                
+│   ├── adminTable.js         
+│   ├── cadastroController.js
+│   ├── dashboardController.js 
+│   ├── loginController.js
+│   ├── occupationController.js           
+│   └── viewController.js
+│             
+├── Models/ (Interação com o banco de dados)              
+│   ├── check-db.js
+│   ├── db.js
+│   ├── init-db.js
+│   ├── restaurante.db 
+│   ├── seed.js
+│   ├── testes-db.js      
+│   └── usuarios.js
+│       
+├── Public/ (Front-end (HTML, CSS, JS, assets))
+│    ├── AssetsAtendente/                 
+│    │   ├── image/
+│    │   │   └──(arquivos de imagem)
+│    │   ├── styleAtendente.css
+│    │   ├── styleCadastro.css
+│    │   ├── styleCancelamento.css
+│    │   ├── styleEdicao.css             
+│    │   └── styleVisualizar.css
+│    │     
+│    ├── AssetsGarçom/                 
+│    │   ├── styleGarcom.css                       
+│    │   └── styleOcupacaoGarcom.css
+│    │
+│    ├── AssetsGerente/                 
+│    │   ├── images/
+│    │   │   └──(arquivos de imagem)
+│    │   ├── styleConfirmacao.css
+│    │   ├── styleEstatistica.css
+│    │   ├── styleOcupacao.css
+│    │   └── styleStatus.css             
+│    │
+│    ├── Atendente/                 
+│    │   ├── atendente.html         
+│    │   ├── atendente.js 
+│    │   ├── cadastramento.html        
+│    │   ├── cadastramento.js
+│    │   ├── cancelar.html         
+│    │   ├── cancelar.js
+│    │   ├── edicao.html    
+│    │   ├── edicao.js                
+│    │   └── visualizar.html
+│    │
+│    ├── Garçom/                 
+│    │   ├── atualizarGarcom.html          
+│    │   ├── garcom.html
+│    │   ├── ocupacaoGarcom.html
+│    │   └── visualizarGarcom.html
+│    │
+│    ├── Gerente/                 
+│    │   ├── atualizar_status.html          
+│    │   ├── estatistica.html
+│    │   ├── gerente.html         
+│    │   ├── ocupacao.html     
+│    │   └── visualizar_reserva_confirmada.html
+│    │
+│    ├── login.html 
+│    ├── login.js
+│    ├── occupationReserve.js
+│    ├── searcgReserve.js
+│    ├── styleLogin.css
+│    ├── updateStatusRserve.js      
+│    └── viewReserves.js
+│         
+├── Routes/ (Definição de endpoints da API)
+│    ├── dashboardRoute.js           
+│    ├── index.js
+│    ├── loginRoute.js
+│    ├── Reserve.js      
+│    └── tableRoute.js
+│
+├── package.json
+├── Relatório sobre o Progresso.txt
+├── server.js
 │                 
 ├── .gitignore 
 └── README.md                 
@@ -139,15 +139,7 @@ node --watch server.js
 ▸ Em resposta deve surgir esta mensagem no terminal:
 ``` " Tabelas criadas com sucesso! http://localhost:3000 " ```
 
-<b> 2. Agora, popule o banco de dados com dados iniciais: </b>
-```
-node A3SistemasDistribuidos/models/seed.js
- ```
-
-▸ Em resposta deve surgir a mensagem:
-``` "Todos os dados foram inseridos!" ```
-
-<b> 3. Por fim, para utilizar a aplicação deve se pegar a url ``` "http://localhost:3000" ``` e por no seu navegador </b>
+<b> 2. Por fim, para utilizar a aplicação deve se pegar a url ``` "http://localhost:3000" ``` e por no seu navegador </b>
 
 <h3> Sua pizzaria digital está pronta para rodar! :D </h3> 
 
@@ -157,16 +149,17 @@ Problemas comuns:
 Verifique se está na pasta correta (Bella-Pizza)
 
 ▸ Banco de dados não carrega? Verifique: <br>
-Se o arquivo seed.js está no caminho correto: A3SistemasDistribuidos/models/
+Se o arquivo seed.js está no caminho correto: models/
 Se better-sqlite3 instalou corretamente
 
 <h2>➢ Tecnologias Utilizadas </h2>
 
 <h2> ➢ Recursos Implementados </h2>
 
-## 🧪 Credenciais de Teste
-| Tipo de Funcionário | Nome de Usuário | Senha | 
-|---------------------|------------------|--------|
-| Atendente           | `joao`           | `123`  |
-| Garçom              | `mario`          | `123`  |
-| Gerente             | `maria`          | `123`  |
+## ➢ Credenciais de Teste
+
+| Tipo de Funcionário | Nome de Usuário | Senha |
+|---------------------|-----------------|-------|
+| Atendente           | `joao`          | `123` |
+| Garçom              | `mario`         | `123` |
+| Gerente             | `maria`         | `123` |

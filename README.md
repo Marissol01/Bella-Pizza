@@ -16,7 +16,8 @@ bella_pizza/
 │
 ├── Controllers/ (Lógica de negócio e controle)                
 │   ├── adminTable.js         
-│   ├── cadastroController.js 
+│   ├── cadastroController.js
+│   ├── dashboardController.js 
 │   ├── loginController.js
 │   ├── occupationController.js           
 │   └── viewController.js
@@ -84,8 +85,8 @@ bella_pizza/
 │    ├── updateStatusRserve.js      
 │    └── viewReserves.js
 │         
-├── Routes/ (Definição de endpoints da API)              
-│    ├── dashboardRoute.js 
+├── Routes/ (Definição de endpoints da API)
+│    ├── dashboardRoute.js           
 │    ├── index.js
 │    ├── loginRoute.js
 │    ├── Reserve.js      

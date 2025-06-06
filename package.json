@@ -1,22 +1,14 @@
 {
-  "name": "bella-pizza",
+  "name": "projeto-a3",
   "version": "1.0.0",
-  "description": "<div align=\"center\">\r   <h1> Bella Pizza 🍕</h1>",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/Marissol01/Bella-Pizza.git"
-  },
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/Marissol01/Bella-Pizza/issues"
-  },
-  "homepage": "https://github.com/Marissol01/Bella-Pizza#readme",
+  "description": "",
   "dependencies": {
     "better-sqlite3": "^11.10.0",
     "cors": "^2.8.5",

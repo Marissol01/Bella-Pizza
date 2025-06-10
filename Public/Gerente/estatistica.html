@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Estatísticas</title>
+
+    <link rel="stylesheet" href="../AssetsGerente/styleEstatistica.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;600&display=swap" rel="stylesheet">
+    <link rel="icon" href="../AssetsAtendente/image/favicon.png" type="image/png">
+</head>
+
+<body>
+
+    <main class="container">
+
+        <div class="filtro">
+
+            <div class="voltar-menu">
+                <button class="button-back" id="button-back">
+                    <img class="back" src="../AssetsAtendente/image/back-button-white.png"
+                        alt="seta para esquerda na cor branca indicando volta"><span
+                        class="button-description">Voltar</span>
+                </button>
+            </div>
+
+            <div class="cabecalho">
+                <div class="logo-area">
+                    <div>
+                        <img src="../AssetsAtendente/image/Untitled-design.png"
+                            alt="ícone de pizza minimalista nas cores verde oliva e vermelho" class="pizza-img">
+                    </div>
+                    <h1><span class="bella">Bella</span> <span class="pizza">Pizza</span></h1>
+                </div>
+
+                <h1 class="main-name">Visualizar Estatísticas</h1>
+            </div>
+
+            <div class="main-container">
+                <div class="status-container">
+
+                    <div class="total-reserva">
+                        <h2>Total de Reservas: 50</h2>
+
+                        <div class="vertical-table">
+
+                            <div class="column">
+                                <div><span class="font-size">Dia</span></div>
+                                <div><span class="font-size">Semana</span></div>
+                                <div><span class="font-size">Mês</span></div>
+                            </div>
+                            <div class="second-column">
+                                <div><span class="font-size">5</span></div>
+                                <div><span class="font-size">17</span></div>
+                                <div><span class="font-size">28</span></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="reserva-dia">
+                        <h2>Reservas de cada dia: </h2>
+                        <div class="tabela-estatistica">
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>Domingo</th>
+                                        <th>Segunda</th>
+                                        <th>Terça</th>
+                                        <th>Quarta</th>
+                                        <th>Quinta</th>
+                                        <th>Sexta</th>
+                                        <th>Sábado</th>
+                                        <th>Total</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>1</td>
+                                        <td>1</td>
+                                        <td>2</td>
+                                        <td>3</td>
+                                        <td>1</td>
+                                        <td>4</td>
+                                        <td>5</td>
+                                        <td>17</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="cancel-container">
+                    <div class="cancel">
+                        <h1>Cancelamento do mês: 14</h1>
+                    </div>
+                </div>
+
+                <div class="button-container">
+                    <button id="emitirRelatorio" class="button-relatorio" class="btn btn-outline-dark">Emitir relatórios</button>
+                </div>
+            </div> 
+
+        </div> 
+    </main>
+
+    <div id="modal-editar" class="modal">
+        <div class="modal-conteudo">
+            <h1>Relatório sobre o andamento das reservas: </h1>
+            <h2>(Informações)</h2>
+
+            <div class="modal-botoes">
+                <button class="voltar" id="fechar-modal">Voltar</button>
+                <button class="confirmar">Salvar</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('button-back').addEventListener('click', function () {
+            window.location.href = 'gerente.html';
+        });
+
+      
+    </script>
+    <script src="estatistica.js"></script>
+
+</body>
+
+</html>

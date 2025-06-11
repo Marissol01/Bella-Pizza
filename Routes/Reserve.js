@@ -2,15 +2,15 @@
 
 const express = require('express');
 const router = express.Router();
-const db = require('../Models/init-db');
-const { confirmarReserva } = require('../Controllers/occupationController');
-const { cadastrarReserva } = require('../Controllers/cadastroController');
-const { cadastrarMesa } = require('../Controllers/adminTable');
-const { listarReservas, buscarPorMesaEData, visualizarReservasPorStatus } = require('../Controllers/viewController');
+const db = require('../models/init-db');
+const { confirmarReserva } = require('../controllers/occupationController');
+const { cadastrarReserva } = require('../controllers/cadastroController');
+const { cadastrarMesa } = require('../controllers/adminTable');
+const { listarReservas, buscarPorMesaEData, visualizarReservasPorStatus } = require('../controllers/viewController');
 //JULIANA EM 07/06:
-const { cancelarReserva } = require('../Controllers/cancelarController');//JULIANA EM 07/06:
+const { cancelarReserva } = require('../controllers/cancelarController');//JULIANA EM 07/06:
 //Amós 07/06/2025
-const { updateStatusReserva} = require('../Controllers/statusController');
+const { updateStatusReserva} = require('../controllers/statusController');
 
 //Criar a rota GET para listar reservas
 router.get('/', (req, res) => {

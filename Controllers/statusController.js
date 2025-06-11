@@ -1,4 +1,4 @@
-const db = require('../Models/init-db');
+const db = require('../models/init-db');
 
 // Status válidos (devem estar consistentes com o banco de dados)
 const VALID_STATUSES = ['pendente', 'confirmada', 'cancelada', 'finalizada'];

@@ -1,4 +1,4 @@
-const db = require('../Models/init-db');
+const db = require('../models/init-db');
 
 // Função que retorna todas as reservas
 function listarReservas(req, res) {

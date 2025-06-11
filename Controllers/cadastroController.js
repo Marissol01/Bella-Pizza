@@ -1,4 +1,4 @@
-const db = require('../Models/init-db');
+const db = require('../models/init-db');
 
 // Função que Cadastra Novas Reservas
 function cadastrarReserva(req, res) {

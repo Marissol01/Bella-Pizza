@@ -1,4 +1,4 @@
-const usuarios = require('../Models/usuarios'); // Array simulado de usuários
+const usuarios = require('../models/usuarios'); // Array simulado de usuários
 
 function validateLogin(req, res) {
   const { username, senha } = req.body;

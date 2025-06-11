@@ -1,4 +1,4 @@
-const db = require('../Models/init-db');
+const db = require('../models/init-db');
 
 
 function confirmarReserva(req, res) {

@@ -1,7 +1,7 @@
 //LEMBRAR DE CORRIGIR!!
 
 //--------------JULIANA EM 07/06
-const db = require('../Models/init-db');
+const db = require('../models/init-db');
 
 function cancelarReserva(req, res) {
   const { id_reserva, id_mesa } = req.body;

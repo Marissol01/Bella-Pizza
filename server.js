@@ -2,11 +2,11 @@ const express = require('express');
 const cors = require('cors');
 const app = express();
 
-const loginRoute = require('./Routes/loginRoute');
-const indexRoutes = require('./Routes/index');
-const tableRoutes = require('./Routes/tableRoute');
-const reservaRoutes = require('./Routes/Reserve');
-const dashboardRoutes = require('./Routes/dashboardRoute'); 
+const loginRoute = require('./routes/loginRoute');
+const indexRoutes = require('./routes/index');
+const tableRoutes = require('./routes/tableRoute');
+const reservaRoutes = require('./routes/Reserve');
+const dashboardRoutes = require('./routes/dashboardRoute'); 
 
 const port = process.env.PORT || 3000; //para configurar a Variável de Ambiente
 

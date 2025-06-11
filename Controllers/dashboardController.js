@@ -1,6 +1,6 @@
 //CÓDIGO EM REVISÃO DashboardController
 
-const db = require('../Models/init-db');
+const db = require('../models/init-db');
 const fs = require('fs');
 
 //Funcionamento = OK! , Lógica = Ok!

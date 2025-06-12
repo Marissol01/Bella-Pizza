@@ -4,8 +4,8 @@
 const router = express.Router();
 const path = require('path');
 
-const { cadastrarMesa } = require('../controllers/adminTable'); 
-const { listarMesas } = require('../controllers/adminTable'); 
+const { cadastrarMesa } = require('../controllers/admintable'); 
+const { listarMesas } = require('../controllers/admintable'); 
 const db = require('../models/init-db');
 
 

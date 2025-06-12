@@ -176,7 +176,7 @@ node --watch server.js
 Verifique se está na pasta correta (Bella-Pizza)
 
 ▸ Banco de dados não carrega? Verifique: <br>
-- Se o arquivo seed.js está no caminho correto: models/
+- Se o arquivo init-db.js está no caminho correto: models/
 - Se better-sqlite3 instalou corretamente
 
 ## ➢ Credenciais de Teste

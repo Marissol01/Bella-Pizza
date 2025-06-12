@@ -3,14 +3,14 @@
 const express = require('express');
 const router = express.Router();
 const db = require('../models/init-db');
-const { confirmarReserva } = require('../controllers/occupationController');
-const { cadastrarReserva } = require('../controllers/cadastroController');
+const { confirmarReserva } = require('../controllers/occupationcontroller');
+const { cadastrarReserva } = require('../controllers/cadastrocontroller');
 const { cadastrarMesa } = require('../controllers/admintable');
-const { listarReservas, buscarPorMesaEData, visualizarReservasPorStatus } = require('../controllers/viewController');
+const { listarReservas, buscarPorMesaEData, visualizarReservasPorStatus } = require('../controllers/viewcontroller');
 //JULIANA EM 07/06:
-const { cancelarReserva } = require('../controllers/cancelarController');//JULIANA EM 07/06:
+const { cancelarReserva } = require('../controllers/cancelarcontroller');//JULIANA EM 07/06:
 //Amós 07/06/2025
-const { updateStatusReserva} = require('../controllers/statusController');
+const { updateStatusReserva} = require('../controllers/statuscontroller');
 
 //Criar a rota GET para listar reservas
 router.get('/', (req, res) => {

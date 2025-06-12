@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const dashboardController = require('../controllers/dashboardController');
+const dashboardController = require('../controllers/dashboardcontroller');
 
 // Reutilize o mesmo nome abaixo
 router.get('/relatorio-reservas', dashboardController.gerarRelatorioReservas);

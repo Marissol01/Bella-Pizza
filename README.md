@@ -108,7 +108,7 @@ Node.js 18 ou superior (Versões mais antigas podem causar incompatibilidades), 
 
 <b> 1. Obtenha o código fonte (ou baixe manualmente o ZIP e extraia) </b>
 ```
-git clone (https://github.com/Marissol01/Bella-Pizza)
+git clone https://github.com/Marissol01/Bella-Pizza
 cd Bella-Pizza
 ```
 

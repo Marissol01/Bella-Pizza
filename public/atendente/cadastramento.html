@@ -54,7 +54,7 @@
 
         <div class="campo">
           <label for="data">Data</label>
-          <input type="date" id="data" min="2025-01-01" />
+          <input type="date" id="data" name="data"/>
         </div>
 
         <div class="campo">
@@ -90,6 +90,11 @@
     document.getElementById('button-back').addEventListener('click', function () {
       window.location.href = 'atendente.html';
     });
+
+    const hoje = new Date().toISOString().split('T')[0];
+    
+    document.getElementById('data').setAttribute('min', hoje);
+    
   </script>
 
   <script src="cadastramento.js"></script>

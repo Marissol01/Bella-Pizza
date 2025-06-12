@@ -55,7 +55,7 @@ function gerarRelatorioReservas(req, res) {
 //Funcionamento = ok! , Lógica = ok!
 // Função: Histórico de Reservas por Mesa
 function obterHistoricoPorMesa(req, res) {
-  const mesaId = req.query.mesaId ? parseInt(req.query.mesaId) : null;
+    const mesaId = req.query.mesaId ? parseInt(req.query.mesaId) : null;
 
     try {
         if (mesaId && isNaN(mesaId)) {
@@ -179,7 +179,7 @@ function gerarTextoRelatorio(reservas) {
 }
 
 function emitirRelatorioTxt(req, res) {
-     try {
+    try {
         const stmtReservas = db.prepare(`
             SELECT 
                 r.nome_cliente AS cliente,
@@ -258,6 +258,86 @@ function gerarTextoRelatorioCompleto(reservas, historico, mesasConfirmadas) {
     return texto;
 }
 
+function obterEstatisticas(req, res) {
+    try {
+        // Consultar dados necessários
+        const stmt = db.prepare(`
+            SELECT 
+                COUNT(*) AS total,
+                SUM(CASE WHEN strftime('%w', data_reserva) = '0' THEN 1 ELSE 0 END) AS domingo,
+                SUM(CASE WHEN strftime('%w', data_reserva) = '1' THEN 1 ELSE 0 END) AS segunda,
+                SUM(CASE WHEN strftime('%w', data_reserva) = '2' THEN 1 ELSE 0 END) AS terca,
+                SUM(CASE WHEN strftime('%w', data_reserva) = '3' THEN 1 ELSE 0 END) AS quarta,
+                SUM(CASE WHEN strftime('%w', data_reserva) = '4' THEN 1 ELSE 0 END) AS quinta,
+                SUM(CASE WHEN strftime('%w', data_reserva) = '5' THEN 1 ELSE 0 END) AS sexta,
+                SUM(CASE WHEN strftime('%w', data_reserva) = '6' THEN 1 ELSE 0 END) AS sabado
+            FROM reservas
+            WHERE date(data_reserva) BETWEEN date('now', '-30 days') AND date('now')
+        `);
+        const resultado = stmt.get();
+
+        // Consultar cancelamentos do mês
+        const stmtCancelamentos = db.prepare(`
+            SELECT COUNT(*) AS cancelamentos
+            FROM reservas
+            WHERE status = 'cancelada' AND strftime('%Y-%m', data_reserva) = strftime('%Y-%m', 'now')
+        `);
+        const resultadoCancelamentos = stmtCancelamentos.get();
+        
+        // Reservas do dia (hoje)
+        const stmtDia = db.prepare(`
+            SELECT COUNT(*) AS totalDia
+            FROM reservas
+            WHERE date(data_reserva) = date('now')
+        `);
+        const resultadoDia = stmtDia.get();
+
+        // Reservas da semana (últimos 7 dias, incluindo hoje)
+        const stmtSemana = db.prepare(`
+            SELECT COUNT(*) AS totalSemana
+            FROM reservas
+            WHERE date(data_reserva) BETWEEN date('now', '-6 days') AND date('now')
+        `);
+        const resultadoSemana = stmtSemana.get();
+
+        // Reservas do mês (mês atual)
+        const stmtMes = db.prepare(`
+            SELECT COUNT(*) AS totalMes
+            FROM reservas
+            WHERE strftime('%Y-%m', data_reserva) = strftime('%Y-%m', 'now')
+        `);
+        const resultadoMes = stmtMes.get();
+
+
+        // Calcular totais por dia da semana
+        const reservasPorDia = {
+            domingo: resultado.domingo,
+            segunda: resultado.segunda,
+            terca: resultado.terca,
+            quarta: resultado.quarta,
+            quinta: resultado.quinta,
+            sexta: resultado.sexta,
+            sabado: resultado.sabado,
+            total: resultado.total
+        };
+        const reservasPorPeriodo = {
+            dia: resultadoDia.totalDia,
+            semana: resultadoSemana.totalSemana,
+            mes: resultadoMes.totalMes
+        };
+
+        // Retornar os dados
+        res.json({
+            reservasPorDia,
+            cancelamentos: resultadoCancelamentos.cancelamentos,
+            reservasPorPeriodo
+        });
+    } catch (err) {
+        console.error('Erro ao obter estatísticas:', err);
+        res.status(500).json({ error: 'Erro ao obter estatísticas.' });
+    }
+}
+
 // ----------------------------
 // EXPORTAÇÕES
 // ----------------------------
@@ -265,5 +345,6 @@ module.exports = {
     gerarRelatorioReservas,
     obterHistoricoPorMesa,
     listarMesasPorGarcom,
-    emitirRelatorioTxt
+    emitirRelatorioTxt,
+    obterEstatisticas
 };

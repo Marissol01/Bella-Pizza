@@ -7,6 +7,7 @@ router.get('/relatorio-reservas', dashboardController.gerarRelatorioReservas);
 router.get('/historico-mesa', dashboardController.obterHistoricoPorMesa);
 router.get('/mesas-confirmadas', dashboardController.listarMesasPorGarcom);
 router.get('/relatorios/txt', dashboardController.emitirRelatorioTxt);
+router.get('/relatorio/estatisticas', dashboardController.obterEstatisticas);
 module.exports = router;
 
 

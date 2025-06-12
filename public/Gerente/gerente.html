@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Painel do Gerente</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../AssetsAtendente/styleAtendente.css">
+    <link rel="icon" href="../AssetsAtendente/image/favicon.png" type="image/png">
+
+</head>
+
+<body>
+
+    <main class="content">
+        <div class="painel">
+
+            <div class="sair-menu">
+                <button class="button-exit" id="exit">
+                    <span class="button-description">Sair</span>
+                    <img class="exit" src="../AssetsAtendente/image/sair.png" alt="porta aberta indicando saida">
+                </button>
+            </div>
+
+            <div class="logo-container">
+                <img src="../AssetsAtendente/image/favicon.png"
+                    alt="ícone de pizza minimalista nas cores verde oliva e vermelho" class="logo-img" />
+                <p class="logo-text"><span class="red-name">Bella</span> Pizza</p>
+            </div>
+
+            <h1>Olá, Maria!</h1>
+            <h2>Painel do Gerente</h2>
+
+            <div class="botoes">
+                <button class="botao" id="estatistica">Visualizar estatística</button>
+                <button class="botao" id="confirmadas">Visualizar reservas confirmadas</button>
+                <button class="botao" id="atualizar">Atualizar status da mesa</button>
+            </div>
+        </div>
+
+    </main>
+
+    <script>
+        document.getElementById('estatistica').addEventListener('click', function () {
+            window.location.href = 'estatistica.html';
+        });
+
+        document.getElementById('confirmadas').addEventListener('click', function () {
+            window.location.href = 'visualizar_reserva_confirmada.html';
+        });
+
+
+        document.getElementById('atualizar').addEventListener('click', function () {
+            window.location.href = 'atualizar_status.html';
+        });
+
+        document.getElementById('exit').addEventListener('click', function () {
+            window.location.href = '../login.html';
+        });
+    </script>
+
+</body>
+
+</html>

@@ -9,23 +9,23 @@ const db = new Database(dbPath, { verbose: console.log }); // Ativa log de queri
 // Dados de exemplo
 const mesas = [
   // Área interna
-  { id: 1, capacidade: 2, localidade: 'Área interna' },
-  { id: 2, capacidade: 4, localidade: 'Área interna' }, 
-  { id: 3, capacidade: 4, localidade: 'Área interna' },
-  { id: 4, capacidade: 4, localidade: 'Área interna' },
-  { id: 5, capacidade: 6, localidade: 'Área interna' },
-  { id: 6, capacidade: 6, localidade: 'Área interna' },
+  { id: 1, capacidade: 2, localidade: 'Área interna', disponibilidade:1 },
+  { id: 2, capacidade: 4, localidade: 'Área interna' ,disponibilidade:1}, 
+  { id: 3, capacidade: 4, localidade: 'Área interna' ,disponibilidade:1},
+  { id: 4, capacidade: 4, localidade: 'Área interna' ,disponibilidade:1},
+  { id: 5, capacidade: 6, localidade: 'Área interna' ,disponibilidade:1},
+  { id: 6, capacidade: 6, localidade: 'Área interna' ,disponibilidade:1},
 
   // Varanda
-  { id: 7, capacidade: 4, localidade: 'Varanda' },
-  { id: 8, capacidade: 4, localidade: 'Varanda' },
-  { id: 9, capacidade: 2, localidade: 'Varanda' },
-  { id: 10, capacidade: 2, localidade: 'Varanda' },
+  { id: 7, capacidade: 4, localidade: 'Varanda' , disponibilidade:1},
+  { id: 8, capacidade: 4, localidade: 'Varanda' , disponibilidade:1},
+  { id: 9, capacidade: 2, localidade: 'Varanda' , disponibilidade:1},
+  { id: 10, capacidade: 2, localidade: 'Varanda' , disponibilidade:1},
 
   // Área VIP
-  { id: 11, capacidade: 8, localidade: 'Área VIP' },
-  { id: 12, capacidade: 6, localidade: 'Área VIP' },
-  { id: 13, capacidade: 2, localidade: 'Área VIP' },
+  { id: 11, capacidade: 8, localidade: 'Área VIP', disponibilidade:1 },
+  { id: 12, capacidade: 6, localidade: 'Área VIP' , disponibilidade:1},
+  { id: 13, capacidade: 2, localidade: 'Área VIP' , disponibilidade:1},
 ];
 
 const usuarios = [
@@ -63,8 +63,8 @@ try {
 
     // Insere mesas
     const insertMesa = db.prepare(`
-      INSERT INTO mesas (id_mesa, capacidade, localidade) 
-      VALUES (@id, @capacidade, @localidade)
+      INSERT INTO mesas (id_mesa, capacidade, localidade,disponibilidade) 
+      VALUES (@id, @capacidade, @localidade,@disponibilidade)
     `);
     mesas.forEach(mesa => {
       console.log('Inserindo mesa:', mesa);

@@ -14,12 +14,12 @@ function cadastrarReserva(req, res) {
 
   console.log("Body recebido:", req.body);
 
-   //REVISAR = Ainda não resolveu o problema❌
-    if (!nome || nome.trim() === "" ||
-      !data || data.trim() === "" ||
-      !contato || contato.trim() === "") {
-      return res.status(400).json({ error: 'Nome, data e contato são obrigatórios.' });
-    }
+  //Funciona corretamente
+  if (!nome || nome.trim() === "" ||
+    !data || data.trim() === "" ||
+    !contato || contato.trim() === "") {
+    return res.status(400).json({ error: 'Nome, data e contato são obrigatórios.' });
+  }
 
   const mesaID = parseInt(mesa, 10);
 
@@ -52,7 +52,6 @@ function cadastrarReserva(req, res) {
         error: `A mesa suporta no máximo ${mesaInfo.capacidade} pessoas.`
       });
     }
-   
 
     // Inserção de reserva corrigida??
     const reservaStmt = db.prepare(`

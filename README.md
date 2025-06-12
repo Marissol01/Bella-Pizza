@@ -6,6 +6,8 @@
 
 
 
+
+
 </h2>➢Integrantes da Equipe</h2>
 
 * Gabriel Farias Prado Martins - 12724128079
@@ -16,7 +18,7 @@
 <h2>➢ Descrição </h2>
 O Bella Pizza é um sistema para gerenciamento de reservas em um restaurante. Ele foi desenvolvido em Node.js com arquitetura MVC, usando Express para o back-end, better-sqlite3 como banco de dados e um front-end em HTML, CSS e JavaScript.,
 
-</h2>Justificativas Iniciais</h2>
+Justificativas Iniciais:
 
 Optamos por utilizar APIs neste projeto porque a comunicação via protocolo HTTP atendeu plenamente às nossas necessidades, proporcionando uma integração eficiente e estável entre os diferentes componentes do sistema. As APIs desempenharam um papel essencial ao possibilitar o consumo de recursos provenientes de outros sistemas e serviços externos, o que ampliou significativamente as funcionalidades da aplicação.
 

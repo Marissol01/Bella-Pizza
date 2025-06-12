@@ -16,6 +16,7 @@ document.addEventListener('DOMContentLoaded', async () => {
 
 //Função responsável por abrir um modal, que me permita Selecionar o Status que eu desejar
 function ativarListenersDeStatus() {
+    console.log('Listeners ativados!');
     const modal = document.getElementById("modal-editar");
     const botoesStatus = modal.querySelectorAll(".status-opcao");
     const botaoConfirmar = modal.querySelector(".confirmar");
@@ -27,6 +28,7 @@ function ativarListenersDeStatus() {
 
     // Abrir modal ao clicar no botão de status
     document.querySelector(".tabela-reservas tbody").addEventListener("click", (event) => {
+        console.log("Clique detectado no tbody");
         const botao = event.target;
 
         if (statusClasses.some(cls => botao.classList.contains(cls))) {

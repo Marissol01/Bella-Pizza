@@ -17,13 +17,13 @@ async function carregarReservasComBotaoDeAtualizacao() {
       let botaoStatus = '';
 
       if (reserva.status === 'confirmada') {
-        botaoStatus = `<button class="confirmacao" data-id="${reserva.id_reserva}" disabled></button>`;
+        botaoStatus = `<button class="confirmacao" data-id="${reserva.id_reserva}"></button>`;
       } else if (reserva.status === 'pendente') {
         botaoStatus = `<button class="confirmacao-pendente" data-id="${reserva.id_reserva}"></button>`;
       } else if (reserva.status === 'cancelada') {
         botaoStatus = `<button class="cancelado" data-id="${reserva.id_reserva}"></button>`;
       } else if (reserva.status === 'finalizada') {
-        botaoStatus = `<button class="finalizado" data-id="${reserva.id_reserva}" disabled></button>`;
+        botaoStatus = `<button class="finalizado" data-id="${reserva.id_reserva}" ></button>`;
       }
 
       tr.innerHTML = `
@@ -39,9 +39,6 @@ async function carregarReservasComBotaoDeAtualizacao() {
 
       tbody.appendChild(tr);
     });
-
-     // ✅ Ativa os listeners nos botões renderizados
-      ativarListenersDeStatus(); // chamada permanece aqui
 
   } catch (error) {
     console.error('Erro ao carregar reservas com botões de atualização:', error);

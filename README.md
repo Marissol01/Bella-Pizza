@@ -7,18 +7,28 @@
 
 
 
+<h2>➢ Descrição </h2>
+Bella Pizza é um sistema de gerenciamento de reservas para restaurantes, desenvolvido com foco em modularidade, escalabilidade e experiência do usuário. Utiliza a arquitetura MVC (Model-View-Controller) e foi construído com as seguintes tecnologias:
 
-</h2>➢Integrantes da Equipe</h2>
+- Node.js (v18 ou superior)
+
+- Express (framework web)
+
+- better-sqlite3 (banco de dados local leve e eficiente)
+
+- HTML, CSS e JavaScript (frontend)
+
+A aplicação permite o controle de reservas por diferentes perfis de funcionários (atendente, garçom e gerente), oferecendo uma interface intuitiva e responsiva para cada um deles.
+
+<h2>➢ Integrantes da Equipe </h2>
 
 * Gabriel Farias Prado Martins - 12724128079
+* Marissol Rosário - 12724135237
 * Luan Pierote da Paz - 12724144647
 * ⁠Juliana Ferraz Ferreira - 12724114948
 * Amós Santos Medeiros -12724144763
 
-<h2>➢ Descrição </h2>
-O Bella Pizza é um sistema para gerenciamento de reservas em um restaurante. Ele foi desenvolvido em Node.js com arquitetura MVC, usando Express para o back-end, better-sqlite3 como banco de dados e um front-end em HTML, CSS e JavaScript.,
-
-Justificativas Iniciais:
+<h2>➢ Justificativa Técnica </h2>
 
 Optamos por utilizar APIs neste projeto porque a comunicação via protocolo HTTP atendeu plenamente às nossas necessidades, proporcionando uma integração eficiente e estável entre os diferentes componentes do sistema. As APIs desempenharam um papel essencial ao possibilitar o consumo de recursos provenientes de outros sistemas e serviços externos, o que ampliou significativamente as funcionalidades da aplicação.
 
@@ -160,18 +170,14 @@ node --watch server.js
 
 <h3> Sua pizzaria digital está pronta para rodar! :D </h3> 
 
-Problemas comuns:
+<b> Problemas comuns: </b>
 
 ▸ Erro "Cannot find module"? <br>
 Verifique se está na pasta correta (Bella-Pizza)
 
 ▸ Banco de dados não carrega? Verifique: <br>
-Se o arquivo seed.js está no caminho correto: models/
-Se better-sqlite3 instalou corretamente
-
-<h2>➢ Tecnologias Utilizadas </h2>
-
-<h2> ➢ Recursos Implementados </h2>
+- Se o arquivo seed.js está no caminho correto: models/
+- Se better-sqlite3 instalou corretamente
 
 ## ➢ Credenciais de Teste
 
